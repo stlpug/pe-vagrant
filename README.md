@@ -24,6 +24,7 @@ Within the apache branch, add the following to the Vagrantfile immediately after
     
     node.vm.network "private_network", ip: "10.10.10.100"
     
+    node.ssh.pty = true
     node.vm.provision :shell, :inline => "sudo echo '10.10.10.10  puppetmaster' >> /etc/hosts"
     node.vm.provision :shell, :inline => "sudo curl -k https://puppetmaster:8140/packages/current/install.bash | sudo bash"
   end
