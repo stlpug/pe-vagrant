@@ -24,4 +24,15 @@ Vagrant.configure(2) do |config|
     puppetmaster.vm.network "forwarded_port", guest: 443, host: 1443
 
   end
+  config.vm.define "apache" do |node|
+    node.vm.box_url = "http://kristianreese.com/stlpug/stlpug-agent-centos-6-6-x64-virtualbox.box"
+    node.vm.box = "stlpug/puppetagent"
+    node.vm.hostname = "apache"
+
+    node.vm.network "private_network", ip: "10.10.10.100"
+
+    node.ssh.pty = true
+    node.vm.provision :shell, :inline => "sudo echo '10.10.10.10  puppetmaster' >> /etc/hosts"
+    node.vm.provision :shell, :inline => "sudo curl -k https://puppetmaster:8140/packages/current/install.bash | sudo bash"
+  end
 end
