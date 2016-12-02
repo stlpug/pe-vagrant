@@ -11,7 +11,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-export RAZOR_HOSTNAME=vgtrazor.stlpug.com
+export RAZOR_HOSTNAME=razor.stlpug.com
 export HTTP_PORT=8150
 export HTTPS_PORT=8151
-export RAZOR_API=https://vgtrazor.stlpug.com:8151/api
+export RAZOR_API=https://razor.stlpug.com:8151/api

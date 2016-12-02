@@ -1,5 +1,5 @@
 # Get bootstrap
-wget 'https://vgtrazor.stlpug.com:8151/api/microkernel/bootstrap?nic_max=1&http_port=8150' --no-check-certificate -O /var/lib/tftpboot/bootstrap.ipxe
+wget 'https://razor.stlpug.com:8151/api/microkernel/bootstrap?nic_max=1&http_port=8150' --no-check-certificate -O /var/lib/tftpboot/bootstrap.ipxe
 
 # Create Razor Repo
 razor create-repo --name centos6 --task centos --iso-url http://archive.kernel.org/centos-vault/6.6/isos/x86_64/CentOS-6.6-x86_64-minimal.iso
