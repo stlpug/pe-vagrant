@@ -111,14 +111,14 @@ Vagrant.configure(2) do |config|
   end
 
   # Razor Client for RHEL
-  config.vm.define "razorclient-rhel", autostart: false do |config|
+  config.vm.define "razornode-rhel", autostart: false do |config|
     config.vm.box_url = "http://kristianreese.com/stlpug/dummy-linux.box"
     config.vm.box = "stlpug/dummy-linux"
     config.vm.boot_timeout = 10
 
     config.vm.provider "virtualbox" do |rc|
       rc.gui = true
-      rc.name = "razorclient-rhel"
+      rc.name = "razornode-rhel"
       rc.memory = 512
       rc.cpus = 1
       rc.customize ["modifyvm", :id, "--cpuexecutioncap", "90"]
@@ -136,14 +136,14 @@ Vagrant.configure(2) do |config|
   end
 
   # Razor Client for Windows
-  config.vm.define "razorclient-win", autostart: false do |config|
+  config.vm.define "razornode-win", autostart: false do |config|
     config.vm.box_url = "http://kristianreese.com/stlpug/dummy-win.box"
     config.vm.box = "stlpug/dummy-win"
     config.vm.boot_timeout = 10
 
     config.vm.provider "virtualbox" do |rc|
       rc.gui = true
-      rc.name = "razorclient-win2k12r2"
+      rc.name = "razornode-win2k12r2"
       rc.memory = 768
       rc.cpus = 1
       rc.customize ["modifyvm", :id, "--cpuexecutioncap", "90"]
