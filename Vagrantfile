@@ -162,4 +162,30 @@ Vagrant.configure(2) do |config|
     end
   end
 
+  # Razor Client for ESXi
+  config.vm.define "razornode-esxi", autostart: false do |config|
+    config.vm.box_url = "http://kristianreese.com/stlpug/dummy-esxi.box"
+    config.vm.box = "stlpug/dummy-esxi"
+    config.vm.boot_timeout = 10
+
+    config.vm.provider "virtualbox" do |rc|
+      rc.gui = true
+      rc.name = "razornode-esxi"
+      rc.memory = 4096
+      rc.cpus = 1
+      rc.customize ["modifyvm", :id, "--cpuexecutioncap", "90"]
+      rc.customize ["modifyvm", :id, "--ostype", "RedHat_64"]
+      rc.customize ["modifyvm", :id, "--ioapic", "on"]
+      rc.customize ["modifyvm", :id, "--boot1", "net"]
+      rc.customize ["modifyvm", :id, "--boot2", "disk"]
+      rc.customize ["modifyvm", :id, "--boot3", "none"]
+      rc.customize ["modifyvm", :id, "--boot4", "none"]
+
+      # NIC 1 config (hostonly)
+      rc.customize ["modifyvm", :id, "--nic1", "hostonly"]
+      rc.customize ["modifyvm", :id, "--hostonlyadapter1", "vboxnet0"]
+      rc.customize ["modifyvm", :id, "--macaddress1", "080027DF3DC8"]
+    end
+  end
+
 end
