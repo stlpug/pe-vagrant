@@ -23,6 +23,9 @@ Vagrant.configure(2) do |config|
     puppetmaster.vm.network "forwarded_port", guest: 8140, host: 18140
     puppetmaster.vm.network "forwarded_port", guest: 443, host: 1443
 
+    # Run r10k
+    puppetmaster.vm.provision :shell, :inline => "sudo r10k deploy environment production -pv"
+
   end
 
   # No changes above this line unless you're on the master branch
