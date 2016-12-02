@@ -29,7 +29,7 @@ Vagrant.configure(2) do |config|
   #
   # Puppet Agent(s) config namespace 'config.vm' below this line
   # Razor Server
-  config.vm.define "razor" do |node|
+  config.vm.define "razor", autostart: false do |node|
     # Set VM memory and cpu specs
     node.vm.provider "virtualbox" do |vb|
       vb.memory = 1536
@@ -108,7 +108,7 @@ Vagrant.configure(2) do |config|
   end
 
   # Razor Client for RHEL
-  config.vm.define "razorclient-rhel" do |config|
+  config.vm.define "razorclient-rhel", autostart: false do |config|
     config.vm.box_url = "http://kristianreese.com/stlpug/dummy.box"
     config.vm.box = "stlpug/dummy-linux"
     config.vm.boot_timeout = 10
@@ -133,7 +133,7 @@ Vagrant.configure(2) do |config|
   end
 
   # Razor Client for Windows
-  config.vm.define "razorclient-win" do |config|
+  config.vm.define "razorclient-win", autostart: false do |config|
     config.vm.box_url = "http://kristianreese.com/stlpug/dummy-win.box"
     config.vm.box = "stlpug/dummy-win"
     config.vm.boot_timeout = 10
