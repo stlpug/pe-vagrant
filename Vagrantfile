@@ -103,8 +103,8 @@ Vagrant.configure(2) do |config|
     node.vm.provision :shell, :inline => "sudo service iptables restart"
 
     # Download needed files
-    node.vm.provision :shell, :inline => "sudo curl -o http://kristianreese.com/stlpug/razor-winpe.wim /tmp/razor-winpe.wim"
-    node.vm.provision :shell, :inline => "sudo curl -o http://kristianreese.com/stlpug/win2k12r2.iso /tmp/win2k12r2.iso"
+    node.vm.provision :shell, :inline => "sudo curl -o /tmp/razor-winpe.wim http://kristianreese.com/stlpug/razor-winpe.wim"
+    node.vm.provision :shell, :inline => "sudo curl -o /tmp/win2k12r2.iso http://kristianreese.com/stlpug/win2k12r2.iso"
   end
 
   # Razor Client for RHEL
