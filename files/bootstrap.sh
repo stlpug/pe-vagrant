@@ -21,7 +21,7 @@ razor create-tag --name win2k12r2 --rule '["has_macaddress", "08:00:27:ca:0e:db"
 
 # Create Razor Policy:
 echo 'Creating policies. . .'
-razor create-policy --name centos6 --repo centos6 --task centos --broker pe --enabled --hostname 'apache1' --root-password secret --tag centos6
+razor create-policy --name centos6 --repo centos6 --task centos --broker pe --enabled --hostname 'apache${id}.stlpug.com' --root-password secret --tag centos6
 razor create-policy --name win2k12r2 --repo win2k12r2 --task windows/2012r2 --broker pe --enabled --hostname 'win2k12r2${id}.stlpug.com' --root-password secret --tag win2k12r2
 razor create-policy --name win2k8r2 --repo win2k8r2 --task windows/2008r2 --broker pe --enabled --hostname 'win2k8r2${id}.stlpug.com' --root-password secret
 razor create-policy --name esxi6 --repo esxi6 --task vmware_esxi --broker noop --enabled --hostname 'esxi${id}.stlpug.com' --root-password secret
