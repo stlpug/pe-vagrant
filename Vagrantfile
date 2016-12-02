@@ -6,7 +6,7 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(2) do |config|
-  config.vm.define "puppetmaster" do |puppetmaster|
+  config.vm.define "puppetmaster", primary: true do |puppetmaster|
     # Set VM memory and cpu specs
     puppetmaster.vm.provider "virtualbox" do |vb|
       vb.memory = 2048
