@@ -1,5 +1,5 @@
 # Get bootstrap.ipxe
-wget 'https://vgtrazor.stlpug.com:8151/api/microkernel/bootstrap?nic_max=1&http_port=8150' --no-check-certificate -O /var/lib/tftpboot/bootstrap.ipxe
+wget 'https://razor.stlpug.com:8151/api/microkernel/bootstrap?nic_max=1&http_port=8150' --no-check-certificate -O /var/lib/tftpboot/bootstrap.ipxe
 
 # Create Razor Broker:
 razor create-broker --name pe --broker-type puppet-pe --configuration server=puppetmaster.stlpug.com
