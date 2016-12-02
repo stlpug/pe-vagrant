@@ -145,7 +145,7 @@ Vagrant.configure(2) do |config|
     config.vm.provider "virtualbox" do |rc|
       rc.gui = true
       rc.name = "razornode-win2k12r2"
-      rc.memory = 768
+      rc.memory = 1024
       rc.cpus = 1
       rc.customize ["modifyvm", :id, "--cpuexecutioncap", "90"]
       rc.customize ["modifyvm", :id, "--ostype", "Windows2012_64"]
