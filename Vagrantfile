@@ -42,7 +42,7 @@ Vagrant.configure(2) do |config|
     node.vm.box_url = "http://kristianreese.com/stlpug/stlpug-agent-centos-6-6-x64-virtualbox.box"
     node.vm.box_download_insecure = true
     node.ssh.pty = true
-    node.vm.hostname = "vgtrazor.stlpug.com"
+    node.vm.hostname = "razor.stlpug.com"
     node.vm.network "private_network", ip: "10.10.10.100"
 
     # Port forwarding for installer app and console app
