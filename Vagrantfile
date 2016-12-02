@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
     # Specify box and assign a hostname
     puppetmaster.vm.box_url = "http://kristianreese.com/stlpug/stlpug-master-centos-6-x64-virtualbox.box"
     puppetmaster.vm.box = "stlpug/puppetmaster"
-    puppetmaster.vm.hostname = "puppetmaster"
+    puppetmaster.vm.hostname = "puppetmaster.stlpug.com"
 
     # Network Configs
     puppetmaster.vm.network "private_network", ip: "10.10.10.10"
