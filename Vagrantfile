@@ -129,6 +129,7 @@ Vagrant.configure(2) do |config|
       # NIC 1 config (hostonly)
       rc.customize ["modifyvm", :id, "--nic1", "hostonly"]
       rc.customize ["modifyvm", :id, "--hostonlyadapter1", "vboxnet0"]
+      rc.customize ["modifyvm", :id, "--macaddress1", "080027411F6F"]
     end
   end
 
