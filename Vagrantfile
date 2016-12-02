@@ -51,7 +51,7 @@ Vagrant.configure(2) do |config|
 
     # Install Puppet Agent
     node.vm.provision :shell, :inline => "sudo echo '10.10.10.10  puppetmaster puppetmaster.stlpug.com' >> /etc/hosts"
-    node.vm.provision :shell, :inline => "sudo echo '10.10.10.100  vgtrazor vgtrazor.stlpug.com' >> /etc/hosts"
+    node.vm.provision :shell, :inline => "sudo echo '10.10.10.100  razor razor.stlpug.com' >> /etc/hosts"
     node.vm.provision :shell, :inline => "sudo curl -k https://puppetmaster.stlpug.com:8140/packages/current/install.bash | sudo bash"
 
     # Razor pre-reqs (for development environments only; do not replicate to production)
