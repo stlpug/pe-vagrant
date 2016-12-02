@@ -109,7 +109,7 @@ Vagrant.configure(2) do |config|
 
   # Razor Client for RHEL
   config.vm.define "razorclient-rhel", autostart: false do |config|
-    config.vm.box_url = "http://kristianreese.com/stlpug/dummy.box"
+    config.vm.box_url = "http://kristianreese.com/stlpug/dummy-linux.box"
     config.vm.box = "stlpug/dummy-linux"
     config.vm.boot_timeout = 10
 
