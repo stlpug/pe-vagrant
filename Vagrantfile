@@ -172,7 +172,7 @@ Vagrant.configure(2) do |config|
       rc.gui = true
       rc.name = "razornode-esxi"
       rc.memory = 4096
-      rc.cpus = 1
+      rc.cpus = 2
       rc.customize ["modifyvm", :id, "--cpuexecutioncap", "90"]
       rc.customize ["modifyvm", :id, "--ostype", "RedHat_64"]
       rc.customize ["modifyvm", :id, "--ioapic", "on"]
