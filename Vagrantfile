@@ -111,14 +111,14 @@ Vagrant.configure(2) do |config|
   end
 
   # Razor Client for RHEL
-  config.vm.define "razornode-rhel", autostart: false do |config|
+  config.vm.define "razornode-linux", autostart: false do |config|
     config.vm.box_url = "http://kristianreese.com/stlpug/dummy-linux.box"
     config.vm.box = "stlpug/dummy-linux"
     config.vm.boot_timeout = 10
 
     config.vm.provider "virtualbox" do |rc|
       rc.gui = true
-      rc.name = "razornode-rhel"
+      rc.name = "razornode-linux"
       rc.memory = 512
       rc.cpus = 1
       rc.customize ["modifyvm", :id, "--cpuexecutioncap", "90"]
