@@ -25,7 +25,6 @@ Vagrant.configure(2) do |config|
 
     # Run r10k
     puppetmaster.vm.provision :shell, :inline => "sudo /usr/local/bin/r10k deploy environment production -pv"
-
   end
 
   # No changes above this line unless you're on the master branch
