@@ -1,6 +1,11 @@
 # pe-vagrant
 Puppet Enterprise Master and Agents
 
+## Branch Specifics
+
+#### razor
+Please refer to the [razor wiki](https://github.com/stlpug/pe-vagrant/wiki/razor)
+
 ## Usage
 ###### Deploy a puppet master:
 ```
